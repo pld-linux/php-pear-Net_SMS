@@ -1,8 +1,8 @@
 # ToDo:
 # - fix pl description (it's ugly)
 %include	/usr/lib/rpm/macros.php
-%define         _class          Net
-%define         _subclass       SMS
+%define		_class		Net
+%define		_subclass	SMS
 %define		_status		beta
 %define		_pearname	%{_class}_%{_subclass}
 
