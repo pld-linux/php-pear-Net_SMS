@@ -11,7 +11,7 @@ Summary(pl):	%{_pearname} - obs³uga SMS
 Name:		php-pear-%{_pearname}
 Version:	0.0.1
 Release:	1
-License:	PHP 2.02
+License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	3d9f94258a133b3855b00e0f3fec8c7f
