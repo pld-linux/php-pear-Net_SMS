@@ -9,12 +9,12 @@
 Summary:	%{_pearname} - SMS functionality
 Summary(pl):	%{_pearname} - obs³uga SMS
 Name:		php-pear-%{_pearname}
-Version:	0.0.1
-Release:	2
+Version:	0.0.2
+Release:	1
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	3d9f94258a133b3855b00e0f3fec8c7f
+# Source0-md5:	9d1c20d30a2dee07e7c2d0fe380650cd
 URL:		http://pear.php.net/package/Net_SMS/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
