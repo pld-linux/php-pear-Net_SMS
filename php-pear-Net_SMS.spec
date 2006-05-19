@@ -1,4 +1,4 @@
-# ToDo:
+# TODO:
 # - fix pl description (it's ugly)
 %include	/usr/lib/rpm/macros.php
 %define		_class		Net
@@ -9,12 +9,12 @@
 Summary:	%{_pearname} - SMS functionality
 Summary(pl):	%{_pearname} - obs³uga SMS
 Name:		php-pear-%{_pearname}
-Version:	0.0.2
-Release:	3
+Version:	0.1.0
+Release:	1
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	9d1c20d30a2dee07e7c2d0fe380650cd
+# Source0-md5:	2f490b53ebd408005535b8624644cbcf
 URL:		http://pear.php.net/package/Net_SMS/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -55,7 +55,7 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc install.log
+%doc install.log optional-packages.txt
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/%{_class}/*.php
 %{php_pear_dir}/%{_class}/%{_subclass}
