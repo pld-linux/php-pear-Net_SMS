@@ -7,7 +7,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - SMS functionality
-Summary(pl):	%{_pearname} - obs≥uga SMS
+Summary(pl.UTF-8):   %{_pearname} - obs≈Çuga SMS
 Name:		php-pear-%{_pearname}
 Version:	0.1.0
 Release:	2
@@ -33,8 +33,8 @@ This package provides SMS functionality and access to SMS gateways.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Ten pakiet dostarcza obs≥ugÍ SMS jak i bramek do wysy≥ania wiadomo∂ci.
+%description -l pl.UTF-8
+Ten pakiet dostarcza obs≈Çugƒô SMS jak i bramek do wysy≈Çania wiadomo≈õci.
 
 Ta klasa ma w PEAR status: %{_status}.
 
