@@ -7,7 +7,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - SMS functionality
-Summary(pl.UTF-8):   %{_pearname} - obsługa SMS
+Summary(pl.UTF-8):	%{_pearname} - obsługa SMS
 Name:		php-pear-%{_pearname}
 Version:	0.1.0
 Release:	2
