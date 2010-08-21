@@ -5,12 +5,11 @@
 %define		_subclass	SMS
 %define		_status		beta
 %define		_pearname	%{_class}_%{_subclass}
-
 Summary:	%{_pearname} - SMS functionality
 Summary(pl.UTF-8):	%{_pearname} - obsługa SMS
 Name:		php-pear-%{_pearname}
 Version:	0.1.0
-Release:	3
+Release:	4
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -19,9 +18,11 @@ URL:		http://pear.php.net/package/Net_SMS/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
-Requires:	php(gettext)
 Requires:	php-common >= 3:4.2.0
+Requires:	php-gettext
 Requires:	php-pear
+Suggests:	php-pear-HTTP_Request
+Suggests:	php-pear-Mail
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
