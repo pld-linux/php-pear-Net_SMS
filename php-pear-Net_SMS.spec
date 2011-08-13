@@ -1,43 +1,42 @@
 # TODO:
 # - fix pl description (it's ugly)
+%define		status		beta
+%define		pearname	Net_SMS
 %include	/usr/lib/rpm/macros.php
-%define		_class		Net
-%define		_subclass	SMS
-%define		_status		beta
-%define		_pearname	%{_class}_%{_subclass}
-Summary:	%{_pearname} - SMS functionality
-Summary(pl.UTF-8):	%{_pearname} - obsługa SMS
-Name:		php-pear-%{_pearname}
-Version:	0.1.0
-Release:	4
+Summary:	%{pearname} - SMS functionality
+Summary(pl.UTF-8):	%{pearname} - obsługa SMS
+Name:		php-pear-%{pearname}
+Version:	0.2.0
+Release:	1
 License:	LGPL
 Group:		Development/Languages/PHP
-Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	2f490b53ebd408005535b8624644cbcf
+Source0:	http://pear.php.net/get/%{pearname}-%{version}.tgz
+# Source0-md5:	b5050c69a7967361e630d0483788e7c4
 URL:		http://pear.php.net/package/Net_SMS/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
-BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	rpmbuild(macros) >= 1.580
 Requires:	php-common >= 3:4.2.0
 Requires:	php-gettext
 Requires:	php-pear
 Suggests:	php-pear-HTTP_Request
 Suggests:	php-pear-Mail
+Suggests:	php-pear-Net_SMPP_Client
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # exclude optional dependencies
-%define		_noautoreq	'pear(HTTP/Request.*)' 'pear(Mail.*)'
+%define		_noautoreq	'pear(HTTP/Request.*)' 'pear(Mail.*)' pear(Net/SMPP/Client.*)
 
 %description
 This package provides SMS functionality and access to SMS gateways.
 
-In PEAR status of this package is: %{_status}.
+In PEAR status of this package is: %{status}.
 
 %description -l pl.UTF-8
 Ten pakiet dostarcza obsługę SMS jak i bramek do wysyłania wiadomości.
 
-Ta klasa ma w PEAR status: %{_status}.
+Ta klasa ma w PEAR status: %{status}.
 
 %prep
 %pear_package_setup
@@ -59,5 +58,5 @@ fi
 %defattr(644,root,root,755)
 %doc install.log optional-packages.txt
 %{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/%{_class}/*.php
-%{php_pear_dir}/%{_class}/%{_subclass}
+%{php_pear_dir}/Net/*.php
+%{php_pear_dir}/Net/SMS
