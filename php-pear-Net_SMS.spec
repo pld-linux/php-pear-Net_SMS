@@ -6,16 +6,16 @@
 Summary:	%{pearname} - SMS functionality
 Summary(pl.UTF-8):	%{pearname} - obsługa SMS
 Name:		php-pear-%{pearname}
-Version:	0.2.0
-Release:	3
+Version:	0.2.1
+Release:	1
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{pearname}-%{version}.tgz
-# Source0-md5:	b5050c69a7967361e630d0483788e7c4
+# Source0-md5:	348ede2d6bbfe9cc7bd0ddf9c817d03e
 URL:		http://pear.php.net/package/Net_SMS/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
-BuildRequires:	rpmbuild(macros) >= 1.580
+BuildRequires:	rpmbuild(macros) >= 1.654
 Requires:	php(core) >= 4.2.0
 Requires:	php(gettext)
 Requires:	php-pear
@@ -26,7 +26,7 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # exclude optional dependencies
-%define		_noautoreq	'pear(HTTP/Request.*)' 'pear(Mail.*)' pear(Net/SMPP/Client.*)
+%define		_noautoreq_pear HTTP/Request2.*
 
 %description
 This package provides SMS functionality and access to SMS gateways.
@@ -41,6 +41,8 @@ Ta klasa ma w PEAR status: %{status}.
 %prep
 %pear_package_setup
 
+mv .%{php_pear_dir}/data/Net_SMS/README .
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}
@@ -49,14 +51,12 @@ install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
-	cat %{_docdir}/%{name}-%{version}/optional-packages.txt
-fi
+%post -p <lua>
+%pear_package_print_optionalpackages
 
 %files
 %defattr(644,root,root,755)
-%doc install.log optional-packages.txt
+%doc README install.log optional-packages.txt
 %{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/Net/*.php
+%{php_pear_dir}/Net/SMS.php
 %{php_pear_dir}/Net/SMS
