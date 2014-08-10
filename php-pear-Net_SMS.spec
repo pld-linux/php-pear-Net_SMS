@@ -19,7 +19,7 @@ BuildRequires:	rpmbuild(macros) >= 1.654
 Requires:	php(core) >= 4.2.0
 Requires:	php(gettext)
 Requires:	php-pear
-Suggests:	php-pear-HTTP_Request
+Suggests:	php-pear-HTTP_Request2
 Suggests:	php-pear-Mail
 Suggests:	php-pear-Net_SMPP_Client
 BuildArch:	noarch
