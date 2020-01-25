@@ -2,7 +2,6 @@
 # - fix pl description (it's ugly)
 %define		status		beta
 %define		pearname	Net_SMS
-%include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - SMS functionality
 Summary(pl.UTF-8):	%{pearname} - obsługa SMS
 Name:		php-pear-%{pearname}
