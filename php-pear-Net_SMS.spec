@@ -6,7 +6,7 @@ Summary:	%{pearname} - SMS functionality
 Summary(pl.UTF-8):	%{pearname} - obsługa SMS
 Name:		php-pear-%{pearname}
 Version:	0.2.1
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{pearname}-%{version}.tgz
